@@ -1,0 +1,146 @@
+/* General Styles */
+:root {
+    --page-bg-lm: #ffffff;
+    --page-text-lm: #1a1a1b;
+    --output-bg-lm: #dfe6e9;
+    --link-text-lm: #2980b9;
+    --link-text-hover-lm: #3498db;
+  
+    --page-bg-dm: #121213;
+    --page-text-dm: #d7dadc;
+    --output-bg-dm: #2d3436;
+  
+    --vertical-margin: 5vh;
+    --standard-margin: 1em;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--page-bg-dm);
+    color: var(--page-text-dm);
+    margin-top: var(--vertical-margin);
+    margin-bottom: var(--vertical-margin);
+  }
+  
+  nav {
+    background-color: var(--page-bg-lm);
+  }
+  
+  a {
+    color: var(--link-text-lm);
+  }
+  a:hover {
+    color: var(--link-text-hover-lm);
+  }
+  
+  body > * {
+    width: min(90vw, 1000px);
+  }
+  
+  h1, h2 {
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+  
+  /* Header Styles */
+  
+  header {
+    position: relative;
+    text-align: center;
+    margin-bottom: var(--vertical-margin);
+  }
+  
+  @media screen and (max-width: 650px) {
+    header {
+      text-align: right;
+    }
+  
+    body header > h1 {
+      margin-top: 0.3em;
+      font-size: 1.2em;
+    }
+  }
+  
+  h1 {
+    font-size: min(3em, 7vw);
+  }
+  
+  h2 {
+    font-size: min(1.5em, 3.5vw);
+    text-align: center;
+  }
+  
+  /* Main Styles */
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--page-bg-lm);
+    color: var(--page-text-lm);
+    padding: var(--standard-margin);
+  }
+  
+  #stats, #output, #actions {
+    margin-bottom: calc(2 * var(--standard-margin));
+  }
+  
+  #stats,
+  .actions {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #stats > *,
+  .actions > * {
+    flex: 1;
+    text-align: center;
+    margin: var(--standard-margin);
+  }
+  
+  button {
+    padding: 1em;
+    cursor: pointer;
+  }
+  
+  #output {
+    height: 200px;
+    background-color: #ccc;
+    overflow-y: scroll;
+    padding: var(--standard-margin);
+  }
+  
+  #output span {
+    display: block;
+    margin-bottom: 0.4em;
+  }
+  
+  span.error {
+    width: 100%;
+    color: #e74c3c;
+  }
+  
+  /** Progress */
+  
+  #progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2em;
+    background-color: #2ecc71;
+    transition: 250ms all;
+  }
+  
+  #progress:hover {
+    height: 4em;
+  }
+  
